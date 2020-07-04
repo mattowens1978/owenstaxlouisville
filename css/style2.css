@@ -7,6 +7,7 @@ body {
     margin: 0;
 }
 
+
 /* ======== ANCHOR TAGS ======== */
 
 a { 
@@ -18,12 +19,12 @@ a {
     padding: 5px 5px; 
     margin: 0 5px;
     display: inline-block; 
-    width: 90%; 
+    width: 100%; 
     text-align: center; 
     }
     
     a:hover { 
-    background: rgba(238, 13, 13, 0.75); 
+    background: lightsalmon; 
     }
 
 
@@ -31,34 +32,106 @@ a {
 
 
 .main-header { 
-    max-width: 1600px; 
+    max-width: 100%; 
     margin: 0 auto; 
     padding: 0 3em 1.5em; 
     } 
     
 .main-nav { 
+    display: flex;
     border: 1px solid lightgray; 
     list-style: none; 
     margin: 5px; 
     padding: 5px; 
-    display: flex;
     }
 
 .main-nav li {
     flex: 3;
 }
 
+.short-name {
+    display: none;
+}
 
-/* =========MEDIA QUERIES========= */
+.main-nav a {
+    width: 25%;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+.main-nav hover {
+    background: #401408;
+}
+
+
+/* ========= MAIN CONTENT ========= */
+
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 1em;
+    padding: 10px;
+
+}
+
+
+/* ========= MEDIA QUERIES ========= */
 
 
 /* TABLETS: */
-@media all and (max-width: 1000px) {
+/* @media screen and (max-width: 992px) {
     .main-nav ul { flex-wrap: wrap; }
     .main-nav li { flex: 1 1 50%; }
-}
+} */
 
-/* MOBILE */
-@media all and (max-width: 480px) {
-    .main-nav li { flex-basis: 100%; }
+/*===== MOBILE =====*/
+@media screen and (max-width: 600px) {
+    .main-nav {
+        flex-direction: column;
+    }
+    .short-name { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+    }
+    .full-name { 
+        display: none; 
+    }
+    .main-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* HAMBURGER MENU -switches on only with screens 600px or less */
+
+    .burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .burger:before {
+        content: "";
+        position: sticky;
+        top: .25em;
+        left: 0;
+        width: 1em;
+        height: 0.125em;
+        border-top: 0.375em double #000;
+        border-bottom: 0.125em solid #000;
+      }
+      .main-nav a {
+          box-sizing: border-box;
+          display: block;
+          width: 100%;
+          border-top: 1px solid #333;
+      }
+
+      /* ____THIS IS SUPPOSED TO TOGGLE BURGER MENU____ */
+      #main-nav { display: none; }
+      #burger input:checked ~ .main-nav { display: block; }
+
 }
