@@ -28,8 +28,7 @@ a {
     }
 
 
-    /* ========= HEADER STYLES ========== */
-
+/* ========= HEADER STYLES ========== */
 
 .main-header { 
     max-width: 100%; 
@@ -54,32 +53,98 @@ a {
 }
 
 .main-nav a {
-    width: 25%;
+    /* width: 25%; */
     padding: 10px;
     color: black;
     text-decoration: none;
     text-align: center;
 }
+
 .main-nav hover {
     background: #401408;
 }
 
+/* this hides the hamburger */
+#burgerLabel, #hamburger { display: none; }
+
 
 /* ========= MAIN CONTENT ========= */
 
-
 .main-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-self: center;
     margin: 1em;
-    padding: 10px;
+    padding: 5px;
+    
+}
 
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ____PLACEKITTEN SLIDESHOW mechanics____ */
+
+#placeKitten {
+    position: relative;
+    height: 200px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.cat {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* ____PLACEKITTEN SLIDESHOW styles____ */
+
+.cat {
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #333;
+    color: #fff;
+}
+
+.cat:nth-of-type(1) {
+    background: red;
+}
+.cat:nth-of-type(2) {
+    background: orange;
+}
+.cat:nth-of-type(3) {
+    background: green;
+}
+.cat:nth-of-type(4) {
+    background: blue;
+}
+.cat:nth-of-type(5) {
+    background: purple;
 }
 
 
 /* ========= MEDIA QUERIES ========= */
-
 
 /* TABLETS: */
 /* @media screen and (max-width: 992px) {
@@ -88,50 +153,59 @@ a {
 } */
 
 /*===== MOBILE =====*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .main-nav {
         flex-direction: column;
     }
+
+    .main-nav,
+    .hamnav { align-items: center; }
+
     .short-name { 
         display: flex; 
         justify-content: center; 
         align-items: center;
     }
+
     .full-name { 
         display: none; 
     }
+
     .main-content {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    /* HAMBURGER MENU -switches on only with screens 600px or less */
+    /* HAMBURGER MENU -switches on only with screens 768px or less */
 
-    .burger {
+    .hamnav {
         display: flex;
         justify-content: center;
         align-items: center;
       }
-      .burger:before {
-        content: "";
-        position: sticky;
-        top: .25em;
-        left: 0;
-        width: 1em;
-        height: 0.125em;
-        border-top: 0.375em double #000;
-        border-bottom: 0.125em solid #000;
+
+    #burgerLabel {
+        display: inline-block;
+        color: #333;
+        /* background: #333; */
+        font-style: normal;
+        font-size: 1.2em;
+        padding: 10px;
       }
-      .main-nav a {
-          box-sizing: border-box;
-          display: block;
-          width: 100%;
-          border-top: 1px solid #333;
+
+      #hamitems a {
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        border-top: 1px solid #333;
       }
 
       /* ____THIS IS SUPPOSED TO TOGGLE BURGER MENU____ */
-      #main-nav { display: none; }
-      #burger input:checked ~ .main-nav { display: block; }
+      .main-nav { display: none; }
+      .hamnav input:checked ~ .main-nav {
+          display: flex;
+
+        }
 
 }
