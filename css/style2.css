@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    background-color: aliceblue;
 }
 
 body {
@@ -20,12 +21,15 @@ a {
     margin: 0 5px;
     display: inline-block; 
     width: 100%; 
-    text-align: center; 
     }
     
     a:hover { 
     background: lightsalmon; 
     }
+
+.full-name {
+    display: inline-block;
+}
 
 
 /* ========= HEADER STYLES ========== */
@@ -33,9 +37,14 @@ a {
 .main-header { 
     max-width: 100%; 
     margin: 0 auto; 
-    padding: 0 3em 1.5em; 
-    } 
-    
+    padding: 10px 3em 1.5em; 
+    text-align: center;
+}
+
+.headline {
+    max-width: 75%;
+}
+
 .main-nav { 
     display: flex;
     border: 1px solid lightgray; 
@@ -72,11 +81,18 @@ a {
 
 .main-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-self: center;
     margin: 1em;
     padding: 5px;
     
+}
+
+img {
+    display: flex;
+    max-height: 200px;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner {
@@ -87,21 +103,23 @@ a {
 }
 
 
-/* ____PLACEKITTEN SLIDESHOW mechanics____ */
+/* SLIDESHOW mechanics & styles */
 
-#placeKitten {
+#slides {
     position: relative;
-    height: 200px;
+    height: 300px;
     padding: 0px;
     margin: 0px;
     list-style-type: none;
 }
 
-.cat {
+.slide {
+    display: flex;
+    justify-content: center;
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 100%;
+    width: 50%;
     height: 100%;
     opacity: 0;
     z-index: 1;
@@ -117,30 +135,12 @@ a {
     z-index: 2;
 }
 
-/* ____PLACEKITTEN SLIDESHOW styles____ */
-
-.cat {
+.slide {
     font-size: 40px;
     padding: 40px;
     box-sizing: border-box;
-    background: #333;
-    color: #fff;
-}
-
-.cat:nth-of-type(1) {
-    background: red;
-}
-.cat:nth-of-type(2) {
-    background: orange;
-}
-.cat:nth-of-type(3) {
-    background: green;
-}
-.cat:nth-of-type(4) {
-    background: blue;
-}
-.cat:nth-of-type(5) {
-    background: purple;
+    /* background: #333; */
+    /* color: #fff; */
 }
 
 
@@ -194,7 +194,7 @@ a {
         padding: 10px;
       }
 
-      #hamitems a {
+    #hamitems a {
         box-sizing: border-box;
         display: flex;
         width: 100%;
