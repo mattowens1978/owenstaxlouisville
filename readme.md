@@ -1,4 +1,4 @@
-#**Welcome to Owens Bookkeeping and Tax!**
+# **Welcome to Owens Bookkeeping and Tax!**
 
 In this website, you will see a few things:
 * - **The Header** *
@@ -10,7 +10,7 @@ In this website, you will see a few things:
 * - **The Main Content** *
     A single column of content, which is actually 3 "columns" if your screen size is above 768px.
 
-#**Tech Used Here:**
+# **Tech Used Here:**
 
 * - **CSS**
     The CSS employed here helps create the hamburger menu and the column layout of the main content area. It also helps style the image carousel.
